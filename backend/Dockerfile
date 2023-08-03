@@ -2,7 +2,7 @@
 FROM adoptopenjdk:11-jdk-hotspot
 
 # Install necessary packages (PostgreSQL client for running database commands)
-RUN apt-get update && apt-get install -y postgresql-client
+RUN apt-get update && apt-get install -y postgresql-client && apt-get -y install maven
 
 # Set the working directory inside the container
 WORKDIR /app
