@@ -24,7 +24,7 @@ WORKDIR /app
 COPY --from=builder /app/target/cineclube-0.0.1-SNAPSHOT.jar ./app.jar
 
 # Expose the port(s) that your application is listening on
-EXPOSE 8080
+EXPOSE 8081
 
 # Define environment variables for PostgreSQL connection
 ENV DB_HOST=localhost
@@ -34,4 +34,4 @@ ENV DB_USER=postgres
 ENV DB_PASSWORD=postgres
 
 # Entry point for running the application
-CMD ["java", "-jar", "app.jar"]
+CMD ["java", "-jar", "app.jar", "--server.port=8081"]
